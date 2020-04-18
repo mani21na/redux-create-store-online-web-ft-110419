@@ -31,13 +31,12 @@ function render() {
   container.textContent = state.count;
 };
 
-dispatch({ type: '@@INIT' })
+let store = createStore();
+store.dispatch({ type: '@@INIT' });
+
 let button = document.getElementById('button');
 
 button.addEventListener('click', function() {
     dispatch({ type: 'INCREASE_COUNT' });
 })
 
-
-let store = createStore();
-store.dispatch({ type: '@@INIT' });
